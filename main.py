@@ -65,8 +65,8 @@ def main():
                   shorten_link(token, user_input))
         except requests.HTTPError as http_err:
             print(f'HTTP error occured: {http_err}')
-        except Exception as err:
-            print(f'Other error occured: {err}')
+        except requests.exceptions.ConnectionError as connection_err:
+            print(f'Connection error occured: {connection_err}')
 
 
 if __name__ == '__main__':
