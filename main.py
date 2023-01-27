@@ -59,7 +59,6 @@ def main():
         print(f'Count of clicks on {user_input} is:',
               count_clicks(token, user_input))
     else:
-        requests.get(user_input).raise_for_status()
         print(f'Your shortened link for {user_input} is:',
               shorten_link(token, user_input))
 
