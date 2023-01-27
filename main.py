@@ -59,14 +59,9 @@ def main():
         print(f'Count of clicks on {user_input} is:',
               count_clicks(token, user_input))
     else:
-        try:
-            requests.get(user_input).raise_for_status()
-            print(f'Your shortened link for {user_input} is:',
-                  shorten_link(token, user_input))
-        except requests.HTTPError as http_err:
-            print(f'HTTP error occured: {http_err}')
-        except requests.exceptions.ConnectionError as connection_err:
-            print(f'Connection error occured: {connection_err}')
+        requests.get(user_input).raise_for_status()
+        print(f'Your shortened link for {user_input} is:',
+              shorten_link(token, user_input))
 
 
 if __name__ == '__main__':
